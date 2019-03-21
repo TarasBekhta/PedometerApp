@@ -93,11 +93,11 @@ class StepsForegroundService : Service(), SensorEventListener, StepListener {
             intent?.action.equals(Constants.STOP_ACTION) -> {
                 //Log.i(LOG_TAG, "Clicked stop")
                 wakeLock?.release()
-                sensorManager!!.unregisterListener(this)
+                sensorManager?.unregisterListener(this)
             }
             intent?.action.equals(Constants.STOPFOREGROUND_ACTION) -> {
                 //Log.i(LOG_TAG, "Received Stop Foreground Intent")
-                sensorManager!!.unregisterListener(this)
+                sensorManager?.unregisterListener(this)
                 wakeLock?.release()
                 skipRestarting = true
                 stopForeground(true)
